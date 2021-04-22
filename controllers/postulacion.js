@@ -32,9 +32,9 @@ module.exports = {
  
   },
 
-  listarPostulacion: function (req, res, next) {
+  listarPostulaciones: function (req, res, next) {
     
-    pool.query('SELECT * FROM postulacion WHERE estado = 1', function (err, rows, fields) {
+    pool.query('SELECT * FROM listar_postulaciones WHERE estado = ?',[req.query.estado], function (err, rows, fields) {
       if (err) {
         console.log(err);
         res.status(200).send({ 'estado': 0, 'resultado': err });

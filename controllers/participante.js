@@ -26,7 +26,7 @@ module.exports = {
 
   
   gestionParticipante: function (req, res, next) {
- pool.query('SELECT gestion_participante(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) AS res',
+ pool.query('SELECT gestion_participante(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) AS res',
       [
         req.body.identificador,
         req.body.idParticipante,
@@ -48,7 +48,7 @@ module.exports = {
         req.body.contactoL,
         req.body.parentescoL,
         req.body.estadoP,
-     
+        req.body.idCurso
       ], function (err, rows, fields) {
         if (err) {
           console.log(err);
