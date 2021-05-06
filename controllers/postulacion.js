@@ -46,4 +46,19 @@ module.exports = {
 
   },
 
+  listarPostulacionDetalle: function (req, res, next) {
+    
+    pool.query('SELECT * FROM listar_datos_postulacion WHERE idPostulacion = ?',[req.query.idPostulacion], function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+        res.status(200).send({ 'estado': 0, 'resultado': err });
+      } else {
+        var resultado = rows[0];
+        res.status(200).send({ 'estado': 1, 'resultado': resultado });
+      }
+    });
+
+  },
+
+
 }
