@@ -12,12 +12,10 @@ module.exports = {
 
 
   gestionPostulacion: function (req, res, next) {
- pool.query('SELECT gestionPostulacion(?,?,?,?,?) AS res',
+ pool.query('SELECT gestion_postulacion(?,?,?) AS res',
       [
         req.body.identificador,
         req.body.idPostulacion,
-        req.body.idCurso,
-        req.body.idParticipante,
         req.body.estado,
      
       ], function (err, rows, fields) {

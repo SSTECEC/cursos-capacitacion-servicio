@@ -48,6 +48,23 @@ module.exports = {
 
   },
 
+  listarCursosParticipante: function (req, res, next) {
+
+    console.log('REQ',req);
+    pool.query('SELECT * FROM consulta_cursos_participante WHERE idParticipante = ?', 
+    [req.query.idParticipante],
+    function (err, rows, fields) {
+      if (err) {
+        console.log(err);
+        res.status(200).send({ 'estado': 0, 'resultado': err });
+      } else {
+        var resultado = rows;
+        res.status(200).send({ 'estado': 1, 'resultado': resultado });
+      }
+    });
+
+  },
+
   listarCurso: function (req, res, next) {
 
     pool.query('SELECT * FROM cursos WHERE idCursos = ?', [req.query.idCursos], function (err, rows, fields) {
