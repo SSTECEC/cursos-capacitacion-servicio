@@ -10,6 +10,7 @@ router.post('/gestionCursos', controller.cursos.gestionCursos);
 router.post('/gestionInstituto', controller.institutos.gestionInstituto);
 router.post('/gestionParticipante', controller.participante.gestionParticipante);
 router.post('/gestionPostulacion', controller.postulacion.gestionPostulacion);
+router.post('/gestionArchivo', controller.archivos.gestionArchivo);
 
 router.get('/listarCursos', controller.cursos.listarCursos);
 router.get('/listarCursosParticipante', controller.cursos.listarCursosParticipante);
