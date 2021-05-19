@@ -19,13 +19,8 @@ router.get('/listarCurso', controller.cursos.listarCurso);
 router.get('/listarParticipante', controller.participante.listarParticipante);
 router.get('/listarPostulaciones', controller.postulacion.listarPostulaciones);
 router.get('/listarPostulacionDetalle', controller.postulacion.listarPostulacionDetalle);
-<<<<<<< HEAD
 router.get('/listarArchivos', controller.participante.listarArchivos);
-
-=======
 router.get('/listarArchivosPostulaciones', controller.archivos.listarArchivosPostulaciones);
->>>>>>> e1fa0604aa5c72f2874813a89fed6fd4b7bca05d
-
 
 //RUTAS CON TOKEN
 
