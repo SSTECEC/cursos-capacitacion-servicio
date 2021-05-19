@@ -10,6 +10,7 @@ router.post('/gestionCursos', controller.cursos.gestionCursos);
 router.post('/gestionInstituto', controller.institutos.gestionInstituto);
 router.post('/gestionParticipante', controller.participante.gestionParticipante);
 router.post('/gestionPostulacion', controller.postulacion.gestionPostulacion);
+router.post('/gestionArchivo', controller.archivos.gestionArchivo);
 
 router.get('/listarCursos', controller.cursos.listarCursos);
 router.get('/listarCursosParticipante', controller.cursos.listarCursosParticipante);
@@ -18,8 +19,12 @@ router.get('/listarCurso', controller.cursos.listarCurso);
 router.get('/listarParticipante', controller.participante.listarParticipante);
 router.get('/listarPostulaciones', controller.postulacion.listarPostulaciones);
 router.get('/listarPostulacionDetalle', controller.postulacion.listarPostulacionDetalle);
+<<<<<<< HEAD
 router.get('/listarArchivos', controller.participante.listarArchivos);
 
+=======
+router.get('/listarArchivosPostulaciones', controller.archivos.listarArchivosPostulaciones);
+>>>>>>> e1fa0604aa5c72f2874813a89fed6fd4b7bca05d
 
 
 //RUTAS CON TOKEN

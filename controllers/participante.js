@@ -11,8 +11,8 @@ createPool();
 module.exports = {
 
   iniciarSesion: function (req, res, next) {
-    
-    pool.query('SELECT * FROM participante WHERE estadoP = 1 and correoP = ? and identificacionP = ?', [req.body.email, req.body.password ], function (err, rows, fields) {
+
+    pool.query('SELECT * FROM participante WHERE estadoP = 1 and correoP = ? and identificacionP = ?', [req.body.email, req.body.password], function (err, rows, fields) {
       if (err) {
         console.log(err);
         res.status(200).send({ 'estado': 0, 'resultado': err });
@@ -24,9 +24,9 @@ module.exports = {
 
   },
 
-  
+
   gestionParticipante: function (req, res, next) {
- pool.query('SELECT gestion_participante(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) AS res',
+    pool.query('SELECT gestion_participante(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) AS res',
       [
         req.body.identificador,
         req.body.idParticipante,
@@ -58,11 +58,11 @@ module.exports = {
           res.status(200).send({ 'estado': 1, 'resultado': result });
         }
       });
- 
+
   },
 
   listarParticipante: function (req, res, next) {
-    
+
     pool.query('SELECT * FROM participante WHERE estadoP = 1', function (err, rows, fields) {
       if (err) {
         console.log(err);
