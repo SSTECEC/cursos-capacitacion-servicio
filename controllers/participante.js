@@ -76,6 +76,22 @@ module.exports = {
   },
 
 
+  listarArchivos: function (req, res) {
+    
+    pool.query('SELECT * FROM archivo WHERE idParticipante = ? ',
+     [req.query.idParticipante], 
+     function (err, rows) {
+      if (err) {
+        console.log(err);
+        res.status(200).send({ 'estado': 0, 'resultado': err });
+      } else {
+        var resultado = rows;
+        res.status(200).send({ 'estado': 1, 'resultado': resultado });
+      }
+    });
+
+  },
+
 
 
 }
